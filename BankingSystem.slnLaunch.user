@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Transaction.API\\Transaction.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Transaction.Worker\\Transaction.Worker.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "AntiFraud.Worker\\AntiFraud.Worker.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

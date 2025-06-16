@@ -1,0 +1,143 @@
+version: "3.4"
+
+services:
+
+  # SQL Server
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "YourStrong@Passw0rd"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - sql_data:/var/opt/mssql
+      - ./scripts:/scripts:ro
+    networks:
+      - microserviceNetwork
+
+  sql-init:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - sqlserver
+    entrypoint: >
+      /bin/sh -c "
+        sleep 20;
+        /opt/mssql-tools/bin/sqlcmd -S sqlserver -U sa -P 'YourStrong@Passw0rd' -i /scripts/init-transaction.sql;
+      "
+    volumes:
+      - ./scripts:/scripts
+    networks:
+      - microserviceNetwork
+
+  # Zookeeper
+  zookeeper:
+    image: bitnami/zookeeper:3.9.1
+    container_name: zookeeper
+    tmpfs: "/zktmp"
+    restart: always
+    ports:
+      - "2181:2181"
+    volumes:
+      - zookeeper_data:/bitnami
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      - microserviceNetwork
+
+  # Kafka
+  kafka:
+    image: bitnami/kafka:3.7.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    restart: always
+    volumes:
+      - kafka_data:/bitnami
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CFG_LISTENERS: INTERNAL://:9092,EXTERNAL://0.0.0.0:29092
+      KAFKA_CFG_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,EXTERNAL://localhost:29092
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CFG_AUTO_CREATE_TOPIC_ENABLE: "true"
+      KAFKA_CREATE_TOPICS: "transaction-created,transaction-status"
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+    depends_on:
+      - zookeeper
+    networks:
+      - microserviceNetwork
+
+  # Kafka UI
+  kafka-ui:
+    image: provectuslabs/kafka-ui:v0.7.2
+    container_name: kafkaui
+    depends_on:
+      - kafka
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    networks:
+      - microserviceNetwork
+
+  # Transaction API
+  transaction-api:
+    image: transaction-api:latest
+    build:
+      context: .
+      dockerfile: Transaction.API/Dockerfile
+    ports:
+      - "5001:8080"
+    depends_on:
+      - sqlserver
+      - kafka
+    environment:
+      - ConnectionStrings__Default=Server=sqlserver;Database=TransactionDb;User Id=sa;Password=YourStrong@Passw0rd;Encrypt=False;
+      - Kafka__BootstrapServers=kafka:9092
+    networks:
+      - microserviceNetwork
+
+  # AntiFraud API
+  antifraud-worker:
+    image: antifraud-worker:latest
+    build:
+      context: .
+      dockerfile: AntiFraud.Worker/Dockerfile
+    depends_on:
+      - sqlserver
+      - kafka
+    environment:
+      - ConnectionStrings__Default=Server=sqlserver;Database=TransactionDb;User Id=sa;Password=YourStrong@Passw0rd;Encrypt=False;
+      - Kafka__BootstrapServers=kafka:9092
+    networks:
+      - microserviceNetwork
+
+  # Transaction Worker
+  transaction-worker:
+    image: transaction-worker:latest
+    build:
+      context: .
+      dockerfile: Transaction.Worker/Dockerfile
+    depends_on:
+      - sqlserver
+      - kafka
+    environment:
+      - ConnectionStrings__Default=Server=sqlserver;Database=TransactionDb;User Id=sa;Password=YourStrong@Passw0rd;Encrypt=False;
+      - Kafka__BootstrapServers=kafka:9092
+    networks:
+      - microserviceNetwork
+
+volumes:
+  sql_data:
+  kafka_data:
+  zookeeper_data:
+
+networks:
+  microserviceNetwork:
+    driver: bridge

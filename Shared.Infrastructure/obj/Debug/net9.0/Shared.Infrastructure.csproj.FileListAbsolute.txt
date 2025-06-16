@@ -1,0 +1,12 @@
+C:\Projects\BankingSystem\Shared.Infrastructure\bin\Debug\net9.0\Shared.Infrastructure.deps.json
+C:\Projects\BankingSystem\Shared.Infrastructure\bin\Debug\net9.0\Shared.Infrastructure.dll
+C:\Projects\BankingSystem\Shared.Infrastructure\bin\Debug\net9.0\Shared.Infrastructure.pdb
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\Shared.Infrastructure.csproj.AssemblyReference.cache
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\Shared.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\Shared.Infrastructure.AssemblyInfoInputs.cache
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\Shared.Infrastructure.AssemblyInfo.cs
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\Shared.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\Shared.Infrastructure.dll
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\refint\Shared.Infrastructure.dll
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\Shared.Infrastructure.pdb
+C:\Projects\BankingSystem\Shared.Infrastructure\obj\Debug\net9.0\ref\Shared.Infrastructure.dll

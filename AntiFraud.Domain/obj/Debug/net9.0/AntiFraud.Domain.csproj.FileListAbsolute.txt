@@ -1,0 +1,11 @@
+C:\Projects\BankingSystem\AntiFraud.Domain\bin\Debug\net9.0\AntiFraud.Domain.deps.json
+C:\Projects\BankingSystem\AntiFraud.Domain\bin\Debug\net9.0\AntiFraud.Domain.dll
+C:\Projects\BankingSystem\AntiFraud.Domain\bin\Debug\net9.0\AntiFraud.Domain.pdb
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\AntiFraud.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\AntiFraud.Domain.AssemblyInfoInputs.cache
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\AntiFraud.Domain.AssemblyInfo.cs
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\AntiFraud.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\AntiFraud.Domain.dll
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\refint\AntiFraud.Domain.dll
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\AntiFraud.Domain.pdb
+C:\Projects\BankingSystem\AntiFraud.Domain\obj\Debug\net9.0\ref\AntiFraud.Domain.dll

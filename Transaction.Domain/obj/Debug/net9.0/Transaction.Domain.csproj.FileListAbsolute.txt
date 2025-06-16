@@ -1,0 +1,11 @@
+C:\Projects\BankingSystem\Transaction.Domain\bin\Debug\net9.0\Transaction.Domain.deps.json
+C:\Projects\BankingSystem\Transaction.Domain\bin\Debug\net9.0\Transaction.Domain.dll
+C:\Projects\BankingSystem\Transaction.Domain\bin\Debug\net9.0\Transaction.Domain.pdb
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\Transaction.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\Transaction.Domain.AssemblyInfoInputs.cache
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\Transaction.Domain.AssemblyInfo.cs
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\Transaction.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\Transaction.Domain.dll
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\refint\Transaction.Domain.dll
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\Transaction.Domain.pdb
+C:\Projects\BankingSystem\Transaction.Domain\obj\Debug\net9.0\ref\Transaction.Domain.dll

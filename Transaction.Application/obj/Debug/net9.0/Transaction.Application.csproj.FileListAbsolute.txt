@@ -1,0 +1,17 @@
+C:\Projects\BankingSystem\Transaction.Application\bin\Debug\net9.0\Transaction.Application.deps.json
+C:\Projects\BankingSystem\Transaction.Application\bin\Debug\net9.0\Transaction.Application.dll
+C:\Projects\BankingSystem\Transaction.Application\bin\Debug\net9.0\Transaction.Application.pdb
+C:\Projects\BankingSystem\Transaction.Application\bin\Debug\net9.0\Contracts.dll
+C:\Projects\BankingSystem\Transaction.Application\bin\Debug\net9.0\Transaction.Domain.dll
+C:\Projects\BankingSystem\Transaction.Application\bin\Debug\net9.0\Transaction.Domain.pdb
+C:\Projects\BankingSystem\Transaction.Application\bin\Debug\net9.0\Contracts.pdb
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transaction.Application.csproj.AssemblyReference.cache
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transaction.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transaction.Application.AssemblyInfoInputs.cache
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transaction.Application.AssemblyInfo.cs
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transaction.Application.csproj.CoreCompileInputs.cache
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transact.3B377CB9.Up2Date
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transaction.Application.dll
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\refint\Transaction.Application.dll
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\Transaction.Application.pdb
+C:\Projects\BankingSystem\Transaction.Application\obj\Debug\net9.0\ref\Transaction.Application.dll
